@@ -24,9 +24,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/solidso/solid-inspection.git"
+		"url": "git+https://github.com/solidso/solid-inspection.git"
 	},
 	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
 	"license": "MIT",
 	"author": {
 		"name": "Murat Gözel",
