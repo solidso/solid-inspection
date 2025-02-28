@@ -50,6 +50,7 @@
 		"globals": "^16.0.0",
 		"husky": "^9.1.7",
 		"prettier": "^3.5.2",
+		"semantic-release": "^24.2.3",
 		"solid-js": "^1.9.5",
 		"typescript": "^5.7.3",
 		"typescript-eslint": "^8.25.0",
