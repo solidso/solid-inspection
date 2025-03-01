@@ -1,70 +1,80 @@
-import { DEV as i } from "solid-js";
-const d = {}, t = i && !0 || d.VITE_SOLID_INSPECTION;
-function n(r) {
+var i = Object.defineProperty;
+var p = (s, e, r) => e in s ? i(s, e, { enumerable: !0, configurable: !0, writable: !0, value: r }) : s[e] = r;
+var t = (s, e, r) => p(s, typeof e != "symbol" ? e + "" : e, r);
+import { DEV as g } from "solid-js";
+const f = {}, n = g && !0 || f.VITE_SOLID_INSPECTION;
+function a(s) {
 }
-class p {
-  transports = [];
-  format(e, o) {
+class u {
+  constructor() {
+    t(this, "transports", []);
+  }
+  format(e, r) {
     return Object.assign(
       {},
-      typeof e == "string" ? { msg: e, level: o } : e instanceof Error ? { msg: e.message, level: o, err: e } : e,
-      { timestamp: (/* @__PURE__ */ new Date()).toISOString(), level: o }
+      typeof e == "string" ? { msg: e, level: r } : e instanceof Error ? { msg: e.message, level: r, err: e } : e,
+      { timestamp: (/* @__PURE__ */ new Date()).toISOString(), level: r }
     );
   }
-  handle(e, o) {
-    const c = this.format(e, o);
-    this.transports.map((l) => l.out(c));
+  handle(e, r) {
+    const l = this.format(e, r);
+    this.transports.map((m) => m.out(l));
   }
   add(e) {
-    this.transports.some((o) => o.name === e.name) || this.transports.push(e);
+    this.transports.some((r) => r.name === e.name) || this.transports.push(e);
   }
 }
-const s = new p();
-class g {
-  name = "base";
-  levelColorMap = {
-    debug: "gray",
-    info: "blue",
-    warn: "orange",
-    error: "red"
-  };
+const o = new u();
+class h {
+  constructor() {
+    t(this, "name", "base");
+    t(this, "levelColorMap", {
+      debug: "gray",
+      info: "light-dark(blue, deepskyblue);",
+      warn: "orange",
+      error: "red"
+    });
+  }
   out(e) {
   }
 }
-class f extends g {
-  name = "console";
-  out(e) {
-    const o = e.msg, { msg: c, level: l, timestamp: w, ...m } = e;
+class _ extends h {
+  constructor() {
+    super(...arguments);
+    t(this, "name", "console");
+  }
+  out(r) {
+    const l = r.msg, { msg: m, level: C, timestamp: I, ...d } = r;
     console.log.apply(console, [
-      "%c" + e.timestamp + " %c[" + e.level.toUpperCase() + "]:",
+      "%c" + r.timestamp + " %c[" + r.level.toUpperCase() + "]:",
       "color:gray;",
-      "color:" + this.levelColorMap[e.level] + ";",
-      o,
-      ...Object.values(m)
+      "color:" + this.levelColorMap[r.level] + ";",
+      l,
+      ...Object.values(d)
     ]);
   }
 }
-const a = new f();
-s.add(a);
-function u(r) {
-  s.handle(r, "debug");
+const c = new _();
+o.add(c);
+function v(s) {
+  o.handle(s, "debug");
 }
-s.add(a);
-function h(r) {
-  s.handle(r, "info");
+o.add(c);
+function w(s) {
+  o.handle(s, "info");
 }
-s.add(a);
-function _(r) {
-  s.handle(r, "warn");
+o.add(c);
+function b(s) {
+  o.handle(s, "warn");
 }
-s.add(a);
-function v(r) {
-  s.handle(r, "error");
+o.add(c);
+function y(s) {
+  o.handle(s, "error");
 }
-const y = t ? h : n, C = t ? u : n, I = t ? _ : n, O = t ? v : n;
+const E = n ? w : a, S = n ? v : a, $ = n ? b : a, D = n ? y : a;
 export {
-  C as debug,
-  O as error,
-  y as info,
-  I as warn
+  S as debug,
+  D as error,
+  E as info,
+  $ as warn
 };
