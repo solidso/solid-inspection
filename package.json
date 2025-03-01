@@ -1,7 +1,7 @@
 {
 	"name": "@solidso/inspection",
 	"version": "0.1.0",
-	"description": "Frontend logging library for solid.js",
+	"description": "Dev mode, frontend logging library for solid.js",
 	"type": "module",
 	"main": "./dist/index.js",
 	"types": "./types.d.ts",
