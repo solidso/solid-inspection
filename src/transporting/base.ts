@@ -4,7 +4,7 @@ export class TransporterBase {
     name = 'base'
     levelColorMap = {
         'debug': 'gray',
-        'info': 'blue',
+        'info': 'light-dark(blue, deepskyblue);',
         'warn': 'orange',
         'error': 'red'
     }
