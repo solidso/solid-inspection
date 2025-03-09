@@ -4,7 +4,7 @@
 
 Dev mode, frontend logging library for solid.js
 
-A small logging utility for frontend development in solid.js. It prints nothing in non-dev environments.
+A small logging utility for frontend development in solid.js. It prints nothing in non-dev environments and functions get eliminated during bundling for non-dev environments.
 
 ![Screenshot of the library in action](https://github.com/solidso/solid-inspection/blob/main/assets/screenshot1.png?raw=true)
 

@@ -1,8 +1,10 @@
-import { DEV } from 'solid-js';
-import { isServer } from 'solid-js/web';
+'use strict';
+
+var solidJs = require('solid-js');
+var web = require('solid-js/web');
 
 /// <reference types="vite/client" />
-const isActive = DEV && !isServer || import.meta.env['VITE_SOLID_INSPECTION'];
+const isActive = solidJs.DEV && !web.isServer || undefined['VITE_SOLID_INSPECTION'];
 function empty(msg) {
   return;
 }
@@ -98,5 +100,8 @@ function error(msg) {
   return isActive ? error$1(msg) : empty();
 }
 
-export { debug, error, info, warn };
-//# sourceMappingURL=index.js.map
+exports.debug = debug;
+exports.error = error;
+exports.info = info;
+exports.warn = warn;
+//# sourceMappingURL=index.cjs.js.map
